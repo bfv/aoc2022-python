@@ -6,11 +6,11 @@ def main():
     a, b = 0, 0
     for rucksack in rucksacks:
         part1, part2 = rucksack[:len(rucksack)//2], rucksack[len(rucksack)//2:]
-        a += calc(set(part1).intersection(part2))
+        a += calc_char_values(set(part1).intersection(part2))
 
     print(f"a: {a}\nb: {b}")
 
-def calc(s: str) -> int:
+def calc_char_values(s: str) -> int:
     v = 0
     for c in s:
         v += get_value(c)
